@@ -158,7 +158,7 @@ public class OtherUtil
         // Check for new version
         String latestVersion = getLatestVersion();
         
-        if(latestVersion!=null && !latestVersion.equals(version))
+        if(latestVersion!=null && !latestVersion.equals(version) && !version.equals("Snapshot"))
         {
             prompt.alert(Prompt.Level.WARNING, "Version", String.format(NEW_VERSION_AVAILABLE, version, latestVersion));
         }

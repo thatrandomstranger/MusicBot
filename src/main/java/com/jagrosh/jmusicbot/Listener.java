@@ -76,7 +76,8 @@ public class Listener extends ListenerAdapter
                     User owner = bot.getJDA().retrieveUserById(bot.getConfig().getOwnerId()).complete();
                     String currentVersion = OtherUtil.getCurrentVersion();
                     String latestVersion = OtherUtil.getLatestVersion();
-                    if(latestVersion!=null && !currentVersion.equalsIgnoreCase(latestVersion))
+                    if(latestVersion!=null && !currentVersion.equalsIgnoreCase(latestVersion)
+                            && !currentVersion.equals("Snapshot"))
                     {
                         String msg = String.format(OtherUtil.NEW_VERSION_AVAILABLE, currentVersion, latestVersion);
                         owner.openPrivateChannel().queue(pc -> pc.sendMessage(msg).queue());
